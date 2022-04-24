@@ -1,7 +1,6 @@
 {
-    "name": "heroku-xray",
-    "description": "Deploy xray VLESS-TCP-XTLS-WHATEVER on Heroku.",
-    "keywords": ["heroku", "xray"],
+    "name": "yarx",
+    "description": "Sample container.",
     "env": {
         "UUID": {
             "description": "The ID for vmess/vless and password for trojan.",
@@ -20,7 +19,7 @@
             "value": "4d7b910f88a846329264bf31cc3f5db4"
         }
     },
-    "website": "http://heroku-xray.herokuapp.com",
-    "repository": "https://github.com/zhangsean/heroku-xray",
+    "website": "http://yarx.herokuapp.com",
+    "repository": "https://github.com/mrjavum/yarx",
     "stack": "container"
 }
