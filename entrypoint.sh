@@ -6,7 +6,7 @@ sed -i "/account_id/s/''/'$ACCOUNT_ID'/" wrangler.toml
 wrangler kv:key get cer -n $CF_KV_NAMESPACE_ID > ssl.cer
 if grep 'key not found' ssl.cer; then
     rm -f ssl.cer
-    acme.sh --issue --standalone -d $DOMAIN --httpport $PORT --tlsport $PORT
+    acme.sh --issue --server letsencrypt --standalone -d $DOMAIN --httpport $PORT --tlsport $PORT
     ln -s ~/.acme.sh/$DOMAIN/fullchain.cer ssl.cer
     ln -s ~/.acme.sh/$DOMAIN/$DOMAIN.key ssl.key
     wrangler kv:key put -n $CF_KV_NAMESPACE_ID cer ssl.cer --path
